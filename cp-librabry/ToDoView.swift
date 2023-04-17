@@ -17,11 +17,13 @@ struct ToDoView: View {
                         Text("Tags: \(problem.tags.joined(separator: ", "))")
                     }
                 }
+                .onDelete(perform: deleteFavoriteProblem)
             }
             .navigationBarTitle("To-Do List")
             .onAppear {
-                loadProblems()
+                fetchFavoriteProblems()
             }
+
         }
     }
 
@@ -65,9 +67,7 @@ struct ToDoView: View {
             } else {
                 if let document = document, document.exists {
                     if let favoriteProblemIds = document.get("favoriteProblems") as? [String] {
-                        DispatchQueue.main.async {
-                            self.favoriteProblems = allProblems.filter { favoriteProblemIds.contains($0.id) }
-                        }
+                        loadFavoriteProblems(favoriteProblemIds: favoriteProblemIds)
                     } else {
                         print("Error: Favorite problems not found.")
                     }
@@ -77,6 +77,54 @@ struct ToDoView: View {
             }
         }
     }
+    func loadFavoriteProblems(favoriteProblemIds: [String]) {
+        let urlString = "https://codeforces.com/api/problemset.problems"
+        
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let decodedResponse = try JSONDecoder().decode(ProblemSetProblemsResponse.self, from: data)
+                    DispatchQueue.main.async {
+                        allProblems = decodedResponse.result.problems
+                        favoriteProblems = allProblems.filter { favoriteProblemIds.contains($0.id) }
+                    }
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
+            }
+        }
+
+        task.resume()
+    }
+
+    func deleteFavoriteProblem(at offsets: IndexSet) {
+        guard let uid = fetchCurrentUserUID() else {
+            print("Error: User not signed in.")
+            return
+        }
+        
+        let db = Firestore.firestore()
+        let userRef = db.collection("users").document(uid)
+        
+        for index in offsets {
+            let problemId = favoriteProblems[index].id
+            userRef.updateData([
+                "favoriteProblems": FieldValue.arrayRemove([problemId])
+            ]) { error in
+                if let error = error {
+                    print("Error removing problem from favorites: \(error)")
+                } else {
+                    favoriteProblems.remove(at: index)
+                }
+            }
+        }
+    }
+
     
     func fetchCurrentUserUID() -> String? {
         if let user = Auth.auth().currentUser {

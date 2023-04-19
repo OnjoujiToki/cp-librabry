@@ -49,6 +49,9 @@
 		2A5E974529ECB34B00691D7C /* SearchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974429ECB34B00691D7C /* SearchSheet.swift */; };
 		2A5E974729ED479A00691D7C /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974629ED479A00691D7C /* ToDoView.swift */; };
 		2A5E974929EDCC4E00691D7C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974829EDCC4E00691D7C /* MainView.swift */; };
+		2A5E974B29EF27AB00691D7C /* recommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974A29EF27AB00691D7C /* recommendationView.swift */; };
+		2A5E974D29EF283000691D7C /* ProblemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974C29EF283000691D7C /* ProblemRow.swift */; };
+		2A5E974F29EF2CE800691D7C /* getColorForDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974E29EF2CE800691D7C /* getColorForDifficulty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		2A5E974429ECB34B00691D7C /* SearchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSheet.swift; sourceTree = "<group>"; };
 		2A5E974629ED479A00691D7C /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		2A5E974829EDCC4E00691D7C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2A5E974A29EF27AB00691D7C /* recommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendationView.swift; sourceTree = "<group>"; };
+		2A5E974C29EF283000691D7C /* ProblemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemRow.swift; sourceTree = "<group>"; };
+		2A5E974E29EF2CE800691D7C /* getColorForDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getColorForDifficulty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +177,12 @@
 				2A5E974829EDCC4E00691D7C /* MainView.swift */,
 				2A5E96FB29E9D2C000691D7C /* LoginView.swift */,
 				2A5E974029EA03F700691D7C /* CodeforcesProfileView.swift */,
+				2A5E974E29EF2CE800691D7C /* getColorForDifficulty.swift */,
 				2A5E973429E9D78700691D7C /* RegisterView.swift */,
 				2A5E96FD29E9D2E500691D7C /* ProblemListView.swift */,
 				2A5E974629ED479A00691D7C /* ToDoView.swift */,
+				2A5E974A29EF27AB00691D7C /* recommendationView.swift */,
+				2A5E974C29EF283000691D7C /* ProblemRow.swift */,
 				2A5E974429ECB34B00691D7C /* SearchSheet.swift */,
 				2A5E96FF29E9D30000691D7C /* ContestView.swift */,
 				2A5E973629E9D7AB00691D7C /* UserManager.swift */,
@@ -371,11 +380,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5E974F29EF2CE800691D7C /* getColorForDifficulty.swift in Sources */,
 				2A5E96FE29E9D2E500691D7C /* ProblemListView.swift in Sources */,
 				2A5E96FC29E9D2C000691D7C /* LoginView.swift in Sources */,
 				2A5E973729E9D7AB00691D7C /* UserManager.swift in Sources */,
 				2A5E974729ED479A00691D7C /* ToDoView.swift in Sources */,
+				2A5E974D29EF283000691D7C /* ProblemRow.swift in Sources */,
 				2A5E973529E9D78700691D7C /* RegisterView.swift in Sources */,
+				2A5E974B29EF27AB00691D7C /* recommendationView.swift in Sources */,
 				2A5E970029E9D30000691D7C /* ContestView.swift in Sources */,
 				2A5E974929EDCC4E00691D7C /* MainView.swift in Sources */,
 				2A5E96D229E8699800691D7C /* cp_librabryApp.swift in Sources */,

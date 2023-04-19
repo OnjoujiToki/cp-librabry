@@ -1,6 +1,7 @@
 import SwiftUI
 import FirebaseFirestore
 import FirebaseAuth
+import UserNotifications
 
 struct ToDoView: View {
     @State private var favoriteProblems: [Problem] = []
@@ -15,13 +16,26 @@ struct ToDoView: View {
                             .foregroundColor(getColorForDifficulty(problem.difficulty ?? 0))
                         Text("Difficulty: \(problem.difficulty ?? 0)")
                         Text("Tags: \(problem.tags.joined(separator: ", "))")
+                        /* Button(action: {
+                                        scheduleNotification(for: problem)
+                                    }) {
+                                        Text("Schedule Notification")
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 10)
+                                            .padding(.vertical, 5)
+                                            .background(Color.blue)
+                                            .cornerRadius(5)
+                                    }
+                                    .padding(.top, 5)*/
                     }
                 }
                 .onDelete(perform: deleteFavoriteProblem)
             }
             .navigationBarTitle("To-Do List")
             .onAppear {
+                
                 fetchFavoriteProblems()
+                //requestNotificationPermission()
             }
 
         }
@@ -132,4 +146,34 @@ struct ToDoView: View {
         }
         return nil
     }
+    func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                print("Notification permission granted")
+            } else if let error = error {
+                print("Error requesting notification permission: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func scheduleNotification(for problem: Problem) {
+        let content = UNMutableNotificationContent()
+        content.title = "Time to solve a problem!"
+        content.body = "Try solving problem \(problem.id) - \(problem.name)"
+        content.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
+
+        let request = UNNotificationRequest(identifier: problem.id, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error)")
+            } else {
+                print("Notification scheduled for problem \(problem.id)")
+            }
+        }
+    }
+
+
 }

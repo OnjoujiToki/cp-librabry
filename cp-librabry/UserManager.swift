@@ -180,6 +180,7 @@ class UserManager: ObservableObject {
 
         task.resume()
     }
+    
     func setUserFromUserDefaults() {
         if let userEmail = UserDefaults.standard.string(forKey: "user_email") {
             Auth.auth().signIn(withEmail: userEmail, password: "") { [weak self] result, error in

@@ -11,7 +11,13 @@ struct ContestView: View {
                     Text(contest.name)
                 }
             }
-            .navigationBarTitle("Contests")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Contests")
+                        .font(Font.custom("BrunoAceSC-Regular", size: 35))
+                        .foregroundColor(Color(hex: "#16a085"))
+                }
+            }
             .onAppear(perform: loadContests)
         }
     }

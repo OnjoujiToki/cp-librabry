@@ -49,24 +49,22 @@ struct MainView: View {
                 
               ContestView()
                     .tabItem {
-                        Label("Contests", systemImage: "calendar")
+                        Label("Contests", systemImage: "highlighter")
                     }
                     .tag(2)
                 
                 ToDoView()
                     .tabItem {
-                        Label("To-Do", systemImage: "checkmark.circle")
+                        Label("To-Do", systemImage: "bookmark")
                     }
                     .tag(3)
                 recommendationView()
                     .tabItem {
-                        Label("Recommendations", systemImage: "star")
+                        Label("For You", systemImage: "lasso.and.sparkles")
                     }
                     .tag(4)
             }
             .accentColor(.white)
-            
-//            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
@@ -77,14 +75,3 @@ struct MainView_Previews: PreviewProvider {
             .environmentObject(UserManager())
     }
 }
-
-//extension UINavigationController {
-//    override open func viewDidLoad() {
-//        super.viewDidLoad()
-//        let appearance = UINavigationBarAppearance()
-//        appearance.configureWithOpaqueBackground()
-//        appearance.backgroundColor = UIColor(Color(hex: "#16a085")) // Set your desired color here
-//        navigationBar.standardAppearance = appearance
-//        navigationBar.scrollEdgeAppearance = appearance
-//    }
-//}

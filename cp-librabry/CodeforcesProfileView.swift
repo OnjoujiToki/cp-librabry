@@ -96,7 +96,7 @@ struct CodeforcesProfileView: View {
                         .padding(.bottom, 10)
                     }
                     .frame(width: 320)
-                    .background(Color(.systemGray6))
+                    .background(Color(.white))
                     .cornerRadius(15)
                     .padding(.top, 10)
                 }

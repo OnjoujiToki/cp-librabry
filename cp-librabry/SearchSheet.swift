@@ -88,7 +88,7 @@ struct SearchSheet: View {
                 }) {
                     Image(systemName: "tray.and.arrow.down.fill")
                         .resizable()
-                        .frame(width: 32, height: 32)
+                        .frame(width: 30, height: 30)
                         .foregroundColor(Color(hex: "#34495e"))
                     
                 })

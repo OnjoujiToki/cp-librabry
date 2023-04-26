@@ -37,65 +37,88 @@ struct ProblemListView: View {
     @State private var maxDifficulty = 2000
 
     var body: some View {
-            NavigationView {
-                
-                List {
-                    ForEach(displayedProblems) { problem in
-                        HStack {
-                            Button(action: { toggleFavoriteProblem(problemId: problem.id) }) {
-                                Image(systemName: favoriteProblemIds.contains(problem.id) ? "star.fill" : "star")
-                                    .foregroundColor(favoriteProblemIds.contains(problem.id) ? .yellow : .gray)
+        NavigationView {
+            List {
+                ForEach(displayedProblems) { problem in
+                    HStack {
+                        Button(action: { toggleFavoriteProblem(problemId: problem.id) }) {
+                            Image(systemName: favoriteProblemIds.contains(problem.id) ? "star.fill" : "star")
+                                .foregroundColor(favoriteProblemIds.contains(problem.id) ? .yellow : .gray)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        VStack(alignment: .leading) {
+                            Text(problem.id + " " + problem.name)
+                                .foregroundColor(getColorForDifficulty(problem.difficulty ?? 0))
+                                .bold()
+                                .padding(.bottom, 0.7)
+                            HStack(spacing: 2){
+                                Text("Difficulty:")
+                                    .foregroundColor(.black)
+                                    .font(.system(size: 12))
+                                    .bold()
+                                Text("\(problem.difficulty ?? 0)")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.black.opacity(0.8))
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            VStack(alignment: .leading) {
-                                Text(problem.id + " " + problem.name)
-                                    .foregroundColor(getColorForDifficulty(problem.difficulty ?? 0))
-                                Text("Difficulty: \(problem.difficulty ?? 0)")
-                                Text("Tags: \(problem.tags.joined(separator: ", "))")
+                            .padding(.bottom, -1.5)
+
+                            HStack(spacing: 2) {
+                                ForEach(problem.tags, id: \.self) { tag in
+                                    Text(tag)
+                                        .minimumScaleFactor(0.3)
+                                        .lineLimit(1)
+                                        .padding(.horizontal, 4)
+                                        .padding(.vertical, 4)
+                                        .frame(height: 18)
+                                        .background(RoundedRectangle(cornerRadius: 4).fill(Color(hex: "#ecf0f1")))
+                                        .foregroundColor(Color(hex: "#2c3e50"))
+                                        .bold()
+                                }
                             }
                         }
                     }
-                    
-                }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text("Problems")
-                            .font(Font.custom("BrunoAceSC-Regular", size: 35))
-                            .foregroundColor(Color(hex: "#16a085"))
-                    }
-                }
-                .navigationBarItems(trailing: Button(action: { showingSearchSheet.toggle() }) {
-                    Image(systemName: "magnifyingglass.circle.fill")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .foregroundColor(Color(hex: "#7f8c8d"))
-                        
-                })
-                .sheet(isPresented: $showingSearchSheet) {
-                    SearchSheet(minDifficulty: $minDifficulty, maxDifficulty: $maxDifficulty, searchTags: $searchTags, onSearch: updateDisplayedProblems)
                 }
                 
-                .onAppear {
-                    loadProblems()
-                    if let uid = fetchCurrentUserUID() {
-                        fetchUserHandle(uid: uid)
-                        fetchFavoriteProblems(uid: uid)
-                    } else {
-                        print("Error: User not signed in.")
-                    }
             }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Problems")
+                        .font(Font.custom("BrunoAceSC-Regular", size: 35))
+                        .foregroundColor(Color(hex: "#16a085"))
+                }
+            }
+            .navigationBarItems(trailing: Button(action: { showingSearchSheet.toggle() }) {
+                Image(systemName: "magnifyingglass.circle.fill")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                    .foregroundColor(Color(hex: "#7f8c8d"))
                 
+            })
+            .sheet(isPresented: $showingSearchSheet) {
+                SearchSheet(minDifficulty: $minDifficulty, maxDifficulty: $maxDifficulty, searchTags: $searchTags, onSearch: updateDisplayedProblems)
+            }
+            
+            .onAppear {
+                loadProblems()
+                if let uid = fetchCurrentUserUID() {
+                    fetchUserHandle(uid: uid)
+                    fetchFavoriteProblems(uid: uid)
+                } else {
+                    print("Error: User not signed in.")
+                }
+            }
+            
         }
     }
     func loadProblems() {
         let urlString = "https://codeforces.com/api/problemset.problems"
-
+        
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 do {
@@ -109,7 +132,7 @@ struct ProblemListView: View {
                 }
             }
         }
-
+        
         task.resume()
     }
     func toggleFavoriteProblem(problemId: String) {

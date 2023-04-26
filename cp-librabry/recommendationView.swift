@@ -30,7 +30,13 @@ struct recommendationView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarTitle("Recommendations")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("For You")
+                        .font(Font.custom("BrunoAceSC-Regular", size: 35))
+                        .foregroundColor(Color(hex: "#16a085"))
+                }
+            }
             .onAppear {
                 userManager.fetchCodeforcesHandle { handle in
                     if let handle = handle {

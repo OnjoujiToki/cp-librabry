@@ -14,41 +14,71 @@ struct ToDoView: View {
                     VStack(alignment: .leading) {
                         Text(problem.id + " " + problem.name)
                             .foregroundColor(getColorForDifficulty(problem.difficulty ?? 0))
-                        Text("Difficulty: \(problem.difficulty ?? 0)")
-                        Text("Tags: \(problem.tags.joined(separator: ", "))")
+                            .bold()
+                            .padding(.bottom, 0.7)
+                        HStack(spacing: 2){
+                            Text("Difficulty:")
+                                .foregroundColor(.black)
+                                .font(.system(size: 12))
+                                .bold()
+                            Text("\(problem.difficulty ?? 0)")
+                                .font(.system(size: 12))
+                                .foregroundColor(.black.opacity(0.8))
+                        }
+                        .padding(.bottom, -1.5)
+                        HStack(spacing: 2) {
+                            ForEach(problem.tags, id: \.self) { tag in
+                                Text(tag)
+                                    .minimumScaleFactor(0.3)
+                                    .lineLimit(1)
+                                    .padding(.horizontal, 4)
+                                    .padding(.vertical, 4)
+                                    .frame(height: 18)
+                                    .background(RoundedRectangle(cornerRadius: 4).fill(Color(hex: "#ecf0f1")))
+                                    .foregroundColor(Color(hex: "#2c3e50"))
+                                    .bold()
+                            }
+                        }
+                        //                        Text("Tags: \(problem.tags.joined(separator: ", "))")
                         /* Button(action: {
-                                        scheduleNotification(for: problem)
-                                    }) {
-                                        Text("Schedule Notification")
-                                            .foregroundColor(.white)
-                                            .padding(.horizontal, 10)
-                                            .padding(.vertical, 5)
-                                            .background(Color.blue)
-                                            .cornerRadius(5)
-                                    }
-                                    .padding(.top, 5)*/
+                         scheduleNotification(for: problem)
+                         }) {
+                         Text("Schedule Notification")
+                         .foregroundColor(.white)
+                         .padding(.horizontal, 10)
+                         .padding(.vertical, 5)
+                         .background(Color.blue)
+                         .cornerRadius(5)
+                         }
+                         .padding(.top, 5)*/
                     }
                 }
                 .onDelete(perform: deleteFavoriteProblem)
             }
-            .navigationBarTitle("To-Do List")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("To-Do List")
+                        .font(Font.custom("BrunoAceSC-Regular", size: 35))
+                        .foregroundColor(Color(hex: "#16a085"))
+                }
+            }
             .onAppear {
                 
                 fetchFavoriteProblems()
                 //requestNotificationPermission()
             }
-
+            
         }
     }
-
+    
     func loadProblems() {
         let urlString = "https://codeforces.com/api/problemset.problems"
-
+        
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 do {
@@ -62,10 +92,10 @@ struct ToDoView: View {
                 }
             }
         }
-
+        
         task.resume()
     }
-
+    
     func fetchFavoriteProblems() {
         guard let uid = fetchCurrentUserUID() else {
             print("Error: User not signed in.")
@@ -98,7 +128,7 @@ struct ToDoView: View {
             print("Invalid URL")
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 do {
@@ -112,10 +142,10 @@ struct ToDoView: View {
                 }
             }
         }
-
+        
         task.resume()
     }
-
+    
     func deleteFavoriteProblem(at offsets: IndexSet) {
         guard let uid = fetchCurrentUserUID() else {
             print("Error: User not signed in.")
@@ -138,7 +168,7 @@ struct ToDoView: View {
             }
         }
     }
-
+    
     
     func fetchCurrentUserUID() -> String? {
         if let user = Auth.auth().currentUser {
@@ -161,11 +191,11 @@ struct ToDoView: View {
         content.title = "Time to solve a problem!"
         content.body = "Try solving problem \(problem.id) - \(problem.name)"
         content.sound = UNNotificationSound.default
-
+        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
-
+        
         let request = UNNotificationRequest(identifier: problem.id, content: content, trigger: trigger)
-
+        
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error scheduling notification: \(error)")
@@ -174,6 +204,4 @@ struct ToDoView: View {
             }
         }
     }
-
-
 }

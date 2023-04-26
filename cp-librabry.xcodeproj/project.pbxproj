@@ -52,6 +52,8 @@
 		2A5E974B29EF27AB00691D7C /* recommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974A29EF27AB00691D7C /* recommendationView.swift */; };
 		2A5E974D29EF283000691D7C /* ProblemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974C29EF283000691D7C /* ProblemRow.swift */; };
 		2A5E974F29EF2CE800691D7C /* getColorForDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E974E29EF2CE800691D7C /* getColorForDifficulty.swift */; };
+		820BF08029F8819A00A62511 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BF07F29F8819A00A62511 /* Color.swift */; };
+		820BF08329F8876100A62511 /* BrunoAceSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 820BF08229F8876100A62511 /* BrunoAceSC-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		2A5E974A29EF27AB00691D7C /* recommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendationView.swift; sourceTree = "<group>"; };
 		2A5E974C29EF283000691D7C /* ProblemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemRow.swift; sourceTree = "<group>"; };
 		2A5E974E29EF2CE800691D7C /* getColorForDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getColorForDifficulty.swift; sourceTree = "<group>"; };
+		820BF07F29F8819A00A62511 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		820BF08229F8876100A62511 /* BrunoAceSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrunoAceSC-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		2A5E96D029E8699800691D7C /* cp-librabry */ = {
 			isa = PBXGroup;
 			children = (
+				820BF08129F8871C00A62511 /* fonts */,
 				2A5E973D29E9DFBD00691D7C /* Info.plist */,
 				2A5E970129E9D56100691D7C /* GoogleService-Info.plist */,
 				2A5E96D129E8699800691D7C /* cp_librabryApp.swift */,
@@ -188,6 +193,7 @@
 				2A5E973629E9D7AB00691D7C /* UserManager.swift */,
 				2A5E96D529E8699900691D7C /* Assets.xcassets */,
 				2A5E96D729E8699900691D7C /* Preview Content */,
+				820BF07F29F8819A00A62511 /* Color.swift */,
 			);
 			path = "cp-librabry";
 			sourceTree = "<group>";
@@ -215,6 +221,14 @@
 				2A5E96EE29E8699A00691D7C /* cp_librabryUITestsLaunchTests.swift */,
 			);
 			path = "cp-librabryUITests";
+			sourceTree = "<group>";
+		};
+		820BF08129F8871C00A62511 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				820BF08229F8876100A62511 /* BrunoAceSC-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +369,7 @@
 			files = (
 				2A5E96D929E8699900691D7C /* Preview Assets.xcassets in Resources */,
 				2A5E96D629E8699900691D7C /* Assets.xcassets in Resources */,
+				820BF08329F8876100A62511 /* BrunoAceSC-Regular.ttf in Resources */,
 				2A5E970229E9D56100691D7C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +404,7 @@
 				2A5E973529E9D78700691D7C /* RegisterView.swift in Sources */,
 				2A5E974B29EF27AB00691D7C /* recommendationView.swift in Sources */,
 				2A5E970029E9D30000691D7C /* ContestView.swift in Sources */,
+				820BF08029F8819A00A62511 /* Color.swift in Sources */,
 				2A5E974929EDCC4E00691D7C /* MainView.swift in Sources */,
 				2A5E96D229E8699800691D7C /* cp_librabryApp.swift in Sources */,
 				2A5E974129EA03F700691D7C /* CodeforcesProfileView.swift in Sources */,

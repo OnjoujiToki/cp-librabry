@@ -21,10 +21,12 @@ class UserManager: ObservableObject {
     }
 
 
-    func register(email: String, password: String) {
+    func register(email: String, password: String, completion: @escaping (String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
+                let errorMsg = error.localizedDescription ?? "Unknown error"
+                completion(errorMsg)
                 return
             }
 
@@ -49,20 +51,37 @@ class UserManager: ObservableObject {
             } else {
                 print("Unknown error occurred during registration")
             }
+            completion("")
         }
     }
 
 
 
-    func login(email: String, password: String) {
+//    func login(email: String, password: String) {
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+//            if let user = result?.user {
+//                self?.isLoggedIn = true
+//                self?.user = user
+//                UserDefaults.standard.set(user.uid, forKey: "user_id")
+//                print("User logged in: \(user.uid)")
+//            } else {
+//                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+//                errorMsg = error!.localizedDescription ?? "Unknown error"
+//            }
+//        }
+//    }
+
+    func login(email: String, password: String, completion: @escaping (String) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
             if let user = result?.user {
                 self?.isLoggedIn = true
                 self?.user = user
                 UserDefaults.standard.set(user.uid, forKey: "user_id")
                 print("User logged in: \(user.uid)")
+                completion("")
             } else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                let errorMsg = error!.localizedDescription ?? "Unknown error"
+                completion(errorMsg)
             }
         }
     }

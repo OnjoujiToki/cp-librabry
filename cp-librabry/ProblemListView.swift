@@ -37,47 +37,55 @@ struct ProblemListView: View {
     @State private var maxDifficulty = 2000
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(displayedProblems) { problem in
-                    HStack {
-                        Button(action: { toggleFavoriteProblem(problemId: problem.id) }) {
-                            Image(systemName: favoriteProblemIds.contains(problem.id) ? "star.fill" : "star")
-                                .foregroundColor(favoriteProblemIds.contains(problem.id) ? .yellow : .gray)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        
-                        VStack(alignment: .leading) {
-                            Text(problem.id + " " + problem.name)
-                                .foregroundColor(getColorForDifficulty(problem.difficulty ?? 0))
-                            Text("Difficulty: \(problem.difficulty ?? 0)")
-                            Text("Tags: \(problem.tags.joined(separator: ", "))")
+            NavigationView {
+                
+                List {
+                    ForEach(displayedProblems) { problem in
+                        HStack {
+                            Button(action: { toggleFavoriteProblem(problemId: problem.id) }) {
+                                Image(systemName: favoriteProblemIds.contains(problem.id) ? "star.fill" : "star")
+                                    .foregroundColor(favoriteProblemIds.contains(problem.id) ? .yellow : .gray)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            
+                            VStack(alignment: .leading) {
+                                Text(problem.id + " " + problem.name)
+                                    .foregroundColor(getColorForDifficulty(problem.difficulty ?? 0))
+                                Text("Difficulty: \(problem.difficulty ?? 0)")
+                                Text("Tags: \(problem.tags.joined(separator: ", "))")
+                            }
                         }
                     }
+                    
                 }
-
-            }
-            .navigationBarTitle("Problems")
-            .navigationBarItems(trailing: Button(action: { showingSearchSheet.toggle() }) {
-                Image(systemName: "magnifyingglass")
-            })
-            .sheet(isPresented: $showingSearchSheet) {
-                SearchSheet(minDifficulty: $minDifficulty, maxDifficulty: $maxDifficulty, searchTags: $searchTags, onSearch: updateDisplayedProblems)
-            }
-
-
-
-            .onAppear {
-                loadProblems()
-                if let uid = fetchCurrentUserUID() {
-                    fetchUserHandle(uid: uid)
-                    fetchFavoriteProblems(uid: uid)
-                } else {
-                    print("Error: User not signed in.")
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Problems")
+                            .font(Font.custom("BrunoAceSC-Regular", size: 35))
+                            .foregroundColor(Color(hex: "#16a085"))
+                    }
                 }
+                .navigationBarItems(trailing: Button(action: { showingSearchSheet.toggle() }) {
+                    Image(systemName: "magnifyingglass.circle.fill")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+                        .foregroundColor(Color(hex: "#7f8c8d"))
+                        
+                })
+                .sheet(isPresented: $showingSearchSheet) {
+                    SearchSheet(minDifficulty: $minDifficulty, maxDifficulty: $maxDifficulty, searchTags: $searchTags, onSearch: updateDisplayedProblems)
+                }
+                
+                .onAppear {
+                    loadProblems()
+                    if let uid = fetchCurrentUserUID() {
+                        fetchUserHandle(uid: uid)
+                        fetchFavoriteProblems(uid: uid)
+                    } else {
+                        print("Error: User not signed in.")
+                    }
             }
-
-
+                
         }
     }
     func loadProblems() {
@@ -266,4 +274,28 @@ struct Submission: Codable {
 struct SubmissionProblem: Codable {
     let contestId: Int?
     let index: String
+}
+
+struct CustomNavigationBarTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(NavigationConfigurator(font: UIFont.systemFont(ofSize: 22, weight: .semibold), textColor: .red))
+    }
+}
+
+struct NavigationConfigurator: UIViewControllerRepresentable {
+    var font: UIFont
+    var textColor: UIColor
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+        return UIViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+        guard let navigationBar = uiViewController.navigationController?.navigationBar else { return }
+        navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor: textColor
+        ]
+    }
 }

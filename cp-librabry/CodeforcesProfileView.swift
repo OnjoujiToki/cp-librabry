@@ -6,7 +6,7 @@ struct CodeforcesProfileView: View {
     @State private var profileData: [String: Any]?
     @State private var errorMessage = ""
     @EnvironmentObject var userManager: UserManager
-
+    
     var body: some View {
         ZStack {
             Color(hex: "#1abc9c")
@@ -14,10 +14,9 @@ struct CodeforcesProfileView: View {
             VStack {
                 if let profileData = profileData {
                     Text("\(profileData["handle"] as? String ?? "")")
-                        .font(Font.custom("Pacifico-Regular", size: 40))
+                        .font(Font.custom("Pacifico-Regular", size: 30))
                         .bold()
                         .foregroundColor(.white)
-                        .padding(.bottom, 5)
                     AsyncImage(url: URL(string: profileData["avatar"] as! String)) { phase in
                         switch phase {
                         case .empty:
@@ -28,14 +27,12 @@ struct CodeforcesProfileView: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 150.0, height: 150.0)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .frame(width: 120.0, height: 120.0)
+                                .clipShape(Circle())
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .stroke(Color.white, lineWidth: 2)
-                                    
+                                    Circle().stroke(Color(.systemGray6), lineWidth: 0.5)
                                 )
-                                .padding(.top, -225)
+                                .padding(.bottom, 10)
                         case .failure:
                             // Display an error message or a placeholder image in case of failure
                             Text("Failed to load logo image")
@@ -44,37 +41,70 @@ struct CodeforcesProfileView: View {
                         }
                     }
                 }
-                TextField("Codeforces Handle", text: $handle)
-                    .autocapitalization(.none)
-                    .keyboardType(.emailAddress)
-                    .disableAutocorrection(true)
-                    .foregroundColor(Color(hex: "#bdc3c7"))
-                Divider().padding(.top, -5)
-                Button(action: {
-                    updateUserHandle()
-                }) {
-                    Text("Update Handle")
-                        .frame(maxWidth: 150)
-                        .font(Font.custom("BrunoAceSC-Regular", size: 15))
-                }.tint(Color(hex: "#16a085"))
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding(.top, 20)
-                
+                HStack{
+                    TextField("Codeforces Handle", text: $handle)
+                        .autocapitalization(.none)
+                        .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
+                        .foregroundColor(Color(.systemGray6))
+                    Button(action: {
+                        updateUserHandle()
+                    }) {
+                        Text("Update Handle")
+                            .font(Font.custom("BrunoAceSC-Regular", size: 12))
+                        
+                    }.tint(Color(hex: "#2c3e50"))
+                }
+                .padding(.horizontal, 5)
+                Divider()
+                    .padding(.top, -5)
                 if let profileData = profileData {
                     VStack{
-                        InfoView(text1:"Contribution: ", text2: "\(profileData["problemSolved"] as? Int ?? 0)", imageName: "number.circle.fill")
-                        InfoView(text1:"Current Rating: ", text2: "\(profileData["currentRating"] as? Int ?? 0)", imageName: "star.leadinghalf.filled")
-                        InfoView(text1:"Max Rating: ", text2: "\(profileData["maxRating"] as? Int ?? 0)", imageName: "star.circle.fill")
+                        HStack{
+                            Image(systemName: "number.circle.fill")
+                                .foregroundColor(Color(hex: "#2c3e50"))
+                            Text("Contribution: ")
+                                .foregroundColor(Color(hex: "#7f8c8d"))
+                                .bold()
+                            Text("\(profileData["problemSolved"] as? Int ?? 0)")
+                                .foregroundColor(Color(hex: "#bdc3c7"))
+                        }
+                        .frame(height: 35)
+                        .padding(.top, 10)
+                        Divider()
+                        HStack{
+                            Image(systemName: "star.leadinghalf.filled")
+                                .foregroundColor(Color(hex: "#2c3e50"))
+                            Text("Current Rating: ")
+                                .foregroundColor(Color(hex: "#7f8c8d"))
+                                .bold()
+                            Text("\(profileData["currentRating"] as? Int ?? 0)")
+                                .foregroundColor(Color(hex: "#bdc3c7"))
+                        }
+                        .frame(height: 35)
+                        Divider()
+                        HStack{
+                            Image(systemName: "star.circle.fill")
+                                .foregroundColor(Color(hex: "#2c3e50"))
+                            Text("Max Rating: ")
+                                .foregroundColor(Color(hex: "#7f8c8d"))
+                                .bold()
+                            Text("\(profileData["maxRating"] as? Int ?? 0)")
+                                .foregroundColor(Color(hex: "#bdc3c7"))
+                        }
+                        .frame(height: 35)
+                        .padding(.bottom, 10)
                     }
-                    .padding(.top, 20)
+                    .frame(width: 320)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(15)
+                    .padding(.top, 10)
                 }
-//                if !errorMessage.isEmpty {
-//                    Text(errorMessage)
-//                        .foregroundColor(.red)
-//                        .padding(.top, 20)
-//                }
+                //                if !errorMessage.isEmpty {
+                //                    Text(errorMessage)
+                //                        .foregroundColor(.red)
+                //                        .padding(.top, 20)
+                //                }
             }
             .padding()
             .onAppear {

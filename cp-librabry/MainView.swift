@@ -22,17 +22,10 @@ struct MainView: View {
                                             Button(action: {
                                                 showingConfirmationAlert = true
                                             }) {
-                                                Text("Logout")
-                                                    .fontWeight(.semibold)
-                                                    .foregroundColor(Color(hex: "#7f8c8d"))
-                                                    .frame(maxWidth: 100)
-                                                    .font(Font.custom("BrunoAceSC-Regular", size: 12))
+                                                Image(systemName: "rectangle.portrait.and.arrow.right.fill")
+                                                                .resizable()
+                                                                .frame(width: 25, height: 25)
                                             }
-                                            .buttonStyle(.borderedProminent)
-                                            .controlSize(.large)
-                                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                                            .padding(.trailing, 5)
-                                            .padding(.top, 10)
                                         )
                                         .accentColor(Color(hex: "#ecf0f1"))
                                         .alert(isPresented: $showingConfirmationAlert) {

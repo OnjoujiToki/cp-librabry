@@ -1,6 +1,7 @@
 import SwiftUI
 import FirebaseAuth
 
+
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
@@ -8,6 +9,9 @@ struct LoginView: View {
     @EnvironmentObject var userManager: UserManager
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
+    @FocusState private var isEmailFieldFocused: Bool
+    @FocusState private var isPasswordFieldFocused: Bool
+    @ObservedObject private var keyboardResponder = KeyboardResponder()
     
     init() {
             _email = State(initialValue: "")
@@ -52,7 +56,7 @@ struct LoginView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.white, lineWidth: 5)
-                    
+                        
                     )
                 TextField("Email", text: $email)
                     .padding()
@@ -63,7 +67,7 @@ struct LoginView: View {
                 SecureField("Password", text: $password)
                     .padding()
                     .textContentType(.oneTimeCode)
-                Divider().padding(.top, -5)
+                Divider().padding(.top, -5).padding(.bottom, 30)
                 VStack {
                     Button(action: {
                         if email.isEmpty || password.isEmpty {
@@ -103,9 +107,10 @@ struct LoginView: View {
                     .controlSize(.large)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .padding(.top, 8)
-                }.padding(.top, 40)
+                }.padding(.bottom, keyboardResponder.currentHeight)
+                    .animation(.easeOut(duration: 0.25), value: keyboardResponder.currentHeight)
                     .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Try it again")))
+                        Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Try it again")))
                     }
                 Spacer()
             }

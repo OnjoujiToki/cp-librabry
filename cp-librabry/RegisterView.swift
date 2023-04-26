@@ -62,7 +62,7 @@ struct RegisterView: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
-                .padding(.top, 25)
+                .padding(.top, 10)
             }
             Spacer()
         }

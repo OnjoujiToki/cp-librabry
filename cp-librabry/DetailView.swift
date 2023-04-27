@@ -23,7 +23,7 @@ struct DetailView: View {
                                     .frame(width: 25, height: 20)
                                     .foregroundColor(Color(hex: "#7f8c8d"))
                                     .padding(.leading, -50)
-                    Text("Problem")
+                    Text("Problem Details")
                         .font(Font.custom("BrunoAceSC-Regular", size: 25))
                         .foregroundColor(Color(hex: "#16a085"))
                 }

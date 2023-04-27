@@ -9,6 +9,8 @@ struct ContestView: View {
             List(contests) { contest in
                 NavigationLink(destination: ContestDetailView(contest: contest)) {
                     Text(contest.name)
+                        .bold()
+                        .foregroundColor(Color(hex: "#7f8c8d"))
                 }
             }
             .toolbar {
@@ -75,13 +77,15 @@ struct ContestDetailView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Contest ID: \(contest.id)")
                 .font(.headline)
+                .foregroundColor(Color(hex: "#7f8c8d"))
             Text("Contest Name: \(contest.name)")
                 .font(.title2)
                 .fontWeight(.bold)
+                .foregroundColor(Color(hex: "#1abc9c"))
             Text("Contest Type: \(contest.type)")
-                .font(.headline)
+                .font(.body)
             Text("Contest Phase: \(contest.phase)")
-                .font(.headline)
+                .font(.body)
             if let startTime = contest.startTimeSeconds {
                 Text("Start Time: \(dateTimeFormatter.string(from: Date(timeIntervalSince1970: startTime)))")
                     .font(.headline)
@@ -93,17 +97,37 @@ struct ContestDetailView: View {
                     Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
             if contest.phase == "BEFORE" {
-                Button(action: addToCalendar) {
-                    Text("Add to Calendar")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
+                HStack{
+                    Spacer()
+                    Button(action: addToCalendar) {
+                        Text("Add to Calendar")
+                            .frame(maxWidth: 150)
+                            .font(Font.custom("BrunoAceSC-Regular", size: 20))
+                    }
+                    .tint(Color(hex: "#1abc9c"))
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    Spacer()
                 }
+                Spacer()
             }
         }
         .padding()
-        .navigationTitle("Contest Details")
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack{
+                    Image(systemName: "arrowshape.turn.up.backward.fill")
+                                    .resizable()
+                                    .frame(width: 25, height: 20)
+                                    .foregroundColor(Color(hex: "#7f8c8d"))
+                                    .padding(.leading, -50)
+                    Text("Contest Details")
+                        .font(Font.custom("BrunoAceSC-Regular", size: 25))
+                        .foregroundColor(Color(hex: "#16a085"))
+                }
+            }
+        }
     }
     private func addToCalendar() {
         let eventStore = EKEventStore()

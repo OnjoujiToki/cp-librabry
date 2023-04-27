@@ -14,16 +14,33 @@ struct ProblemRow: View {
         VStack(alignment: .leading) {
             Text(problem.id + " " + problem.name)
                 .foregroundColor(color)
-            Text("Difficulty: \(problem.difficulty ?? 0)")
+                .bold()
+                .padding(.bottom, 0.7)
+            HStack(spacing: 2){
+                Text("Difficulty:")
+                    .foregroundColor(.black)
+                    .font(.system(size: 12))
+                    .bold()
+                Text("\(problem.difficulty ?? 0)")
+                    .font(.system(size: 12))
+                    .foregroundColor(.black.opacity(0.8))
+            }
+            .padding(.bottom, -1.5)
             
-            Text("Tags: \(problem.tags.joined(separator: ", "))")
+            HStack(spacing: 2) {
+                ForEach(problem.tags, id: \.self) { tag in
+                    Text(tag)
+                        .minimumScaleFactor(0.3)
+                        .lineLimit(1)
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 4)
+                        .frame(height: 18)
+                        .background(RoundedRectangle(cornerRadius: 4).fill(Color(hex: "#ecf0f1")))
+                        .foregroundColor(Color(hex: "#2c3e50"))
+                        .bold()
+                }
+            }
         }
     }
 }
 
-/*
-struct ProblemRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ProblemRow(problem: Problem(contestId: 1, index: "A", name: "Example Problem", difficulty: 1000, tags: ["example", "test"]))
-    }
-}*/

@@ -10,20 +10,47 @@ struct recommendationView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Easy")) {
-                    ForEach(easyProblems) { problem in
-                        ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                Section(header:
+                            HStack{
+                                Image(systemName: "circlebadge")
+                                .resizable()
+                                .frame(width: 18, height: 18)
+                                .foregroundColor(Color(hex: "#7f8c8d"))
+                            Text("Easy")
+                                .foregroundColor(Color(hex: "#7f8c8d"))
+                                .font(.headline)
+                            }) {
+                        ForEach(easyProblems) { problem in
+                            ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                        }
                     }
-                }
                 
-                Section(header: Text("Medium")) {
+                Section(header:
+                            HStack{
+                                Image(systemName: "circle.grid.2x1")
+                                    .resizable()
+                                    .frame(width: 18, height: 10)
+                                    .foregroundColor(Color(hex: "#7f8c8d"))
+                            Text("Medium")
+                                .foregroundColor(Color(hex: "#7f8c8d"))
+                                .font(.headline)
+                            }) {
                     ForEach(mediumProblems) { problem in
                         ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
                     }
 
                 }
                 
-                Section(header: Text("Hard")) {
+                Section(header:
+                            HStack{
+                                Image(systemName: "circle.grid.2x2")
+                                    .resizable()
+                                    .frame(width: 18, height: 18)
+                                    .foregroundColor(Color(hex: "#7f8c8d"))
+                                Text("Hard")
+                                    .foregroundColor(Color(hex: "#7f8c8d"))
+                                    .font(.headline)
+                                }) {
                     ForEach(hardProblems) { problem in
                         ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
                     }
@@ -103,10 +130,13 @@ struct recommendationView: View {
         
         task.resume()
     }
-
-
 }
 
-
+struct RecommendationView_Previews: PreviewProvider {
+    static var previews: some View {
+        recommendationView()
+            .environmentObject(UserManager())
+    }
+}
 
 

@@ -86,7 +86,7 @@ struct SearchSheet: View {
                     presentationMode.wrappedValue.dismiss()
                     
                 }) {
-                    Image(systemName: "tray.and.arrow.down.fill")
+                    Image(systemName: "checkmark.circle.fill")
                         .resizable()
                         .frame(width: 30, height: 30)
                         .foregroundColor(Color(hex: "#34495e"))

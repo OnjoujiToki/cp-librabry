@@ -57,6 +57,8 @@
 		820BF08F29F8BF0400A62511 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BF08E29F8BF0400A62511 /* KeyboardResponder.swift */; };
 		820BF09B29F8D4EE00A62511 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 820BF09A29F8D4EE00A62511 /* Pacifico-Regular.ttf */; };
 		820BF09D29F8DC6D00A62511 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BF09C29F8DC6D00A62511 /* InfoView.swift */; };
+		827DC53429FAC1A000969FE9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53329FAC1A000969FE9 /* WebView.swift */; };
+		827DC53629FAC1B800969FE9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53529FAC1B800969FE9 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		820BF08E29F8BF0400A62511 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		820BF09A29F8D4EE00A62511 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		820BF09C29F8DC6D00A62511 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		827DC53329FAC1A000969FE9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		827DC53529FAC1B800969FE9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 				820BF07F29F8819A00A62511 /* Color.swift */,
 				820BF08E29F8BF0400A62511 /* KeyboardResponder.swift */,
 				820BF09C29F8DC6D00A62511 /* InfoView.swift */,
+				827DC53329FAC1A000969FE9 /* WebView.swift */,
+				827DC53529FAC1B800969FE9 /* DetailView.swift */,
 			);
 			path = "cp-librabry";
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820BF09D29F8DC6D00A62511 /* InfoView.swift in Sources */,
+				827DC53629FAC1B800969FE9 /* DetailView.swift in Sources */,
 				2A5E974F29EF2CE800691D7C /* getColorForDifficulty.swift in Sources */,
 				2A5E96FE29E9D2E500691D7C /* ProblemListView.swift in Sources */,
 				2A5E96FC29E9D2C000691D7C /* LoginView.swift in Sources */,
@@ -416,6 +423,7 @@
 				2A5E974B29EF27AB00691D7C /* recommendationView.swift in Sources */,
 				820BF08F29F8BF0400A62511 /* KeyboardResponder.swift in Sources */,
 				2A5E970029E9D30000691D7C /* ContestView.swift in Sources */,
+				827DC53429FAC1A000969FE9 /* WebView.swift in Sources */,
 				820BF08029F8819A00A62511 /* Color.swift in Sources */,
 				2A5E974929EDCC4E00691D7C /* MainView.swift in Sources */,
 				2A5E96D229E8699800691D7C /* cp_librabryApp.swift in Sources */,

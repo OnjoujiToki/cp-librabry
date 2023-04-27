@@ -21,7 +21,9 @@ struct recommendationView: View {
                                 .font(.headline)
                             }) {
                         ForEach(easyProblems) { problem in
-                            ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                            NavigationLink(destination: DetailView(url: problem.urlInfo)) {
+                                ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                            }
                         }
                     }
                 
@@ -36,7 +38,9 @@ struct recommendationView: View {
                                 .font(.headline)
                             }) {
                     ForEach(mediumProblems) { problem in
-                        ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                        NavigationLink(destination: DetailView(url: problem.urlInfo)) {
+                            ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                        }
                     }
 
                 }
@@ -52,7 +56,9 @@ struct recommendationView: View {
                                     .font(.headline)
                                 }) {
                     ForEach(hardProblems) { problem in
-                        ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                        NavigationLink(destination: DetailView(url: problem.urlInfo)) {
+                            ProblemRow(problem: problem, color: getColorForDifficulty(problem.difficulty ?? 0))
+                        }
                     }
                 }
             }

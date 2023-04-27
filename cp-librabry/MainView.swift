@@ -16,53 +16,58 @@ struct MainView: View {
             LoginView()
         } else {
             TabView(selection: $selection) {
-                NavigationView {
-                    CodeforcesProfileView()
-                        .navigationBarItems(trailing:
-                                            Button(action: {
-                                                showingConfirmationAlert = true
-                                            }) {
-                                                Image(systemName: "rectangle.portrait.and.arrow.right.fill")
-                                                                .resizable()
-                                                                .frame(width: 25, height: 25)
-                                            }
-                                        )
-                                        .accentColor(Color(hex: "#ecf0f1"))
-                                        .alert(isPresented: $showingConfirmationAlert) {
-                                            Alert(title: Text("Are you sure you want to logout?"),
-                                                  primaryButton: .destructive(Text("Logout")) {
-                                                      userManager.logout()
-                                                  },
-                                                  secondaryButton: .cancel())
-                                        }
-                }
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
-                .tag(0)
-                
                 ProblemListView()
                     .tabItem {
                         Label("Problems", systemImage: "list.bullet")
                     }
-                    .tag(1)
+                    .tag(0)
                 
-              ContestView()
+                ContestView()
                     .tabItem {
                         Label("Contests", systemImage: "highlighter")
                     }
-                    .tag(2)
+                    .tag(1)
                 
                 ToDoView()
                     .tabItem {
                         Label("To-Do", systemImage: "bookmark")
                     }
-                    .tag(3)
+                    .tag(2)
                 recommendationView()
                     .tabItem {
                         Label("For You", systemImage: "lasso.and.sparkles")
                     }
-                    .tag(4)
+                    .tag(3)
+                NavigationView {
+                    CodeforcesProfileView()
+                        .navigationBarItems(trailing:
+                                                Button(action: {
+                            showingConfirmationAlert = true
+                        }) {
+                            Image(systemName: "rectangle.portrait.and.arrow.right.fill")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                        }
+                        )
+                        .accentColor(Color(hex: "#ecf0f1"))
+                        .alert(isPresented: $showingConfirmationAlert) {
+                            Alert(title: Text("Are you sure you want to logout?"),
+                                  primaryButton: .destructive(Text("Logout")) {
+                                userManager.logout()
+                            },
+                                  secondaryButton: .cancel())
+                        }
+                }
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+                .tag(4)
+                
+                AboutView()
+                    .tabItem {
+                        Label("About", systemImage: "person.circle")
+                    }
+                    .tag(5)
             }
             .accentColor(.white)
         }

@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>BrunoAceSC-Regular.ttf</string>
-		<string>Pacifico-Regular.ttf</string>
-	</array>
-	<key>CFBundleIdentifier</key>
-	<string></string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -17,24 +10,27 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>&lt;?xml</string>
-				<string>version=&quot;1.0&quot;</string>
-				<string>encoding=&quot;UTF-8&quot;?&gt;
+				<string>version="1.0"</string>
+				<string>encoding="UTF-8"?&gt;
 &lt;!DOCTYPE</string>
 				<string>plist</string>
 				<string>PUBLIC</string>
-				<string>&quot;-//Apple//DTD</string>
+				<string>"-//Apple//DTD</string>
 				<string>PLIST</string>
-				<string>1.0//EN&quot;</string>
-				<string>&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+				<string>1.0//EN"</string>
+				<string>"http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
 &lt;plist</string>
-				<string>version=&quot;1.0&quot;&gt;
+				<string>version="1.0"&gt;
 &lt;string&gt;com.googleusercontent.apps.999776179493-dl2kquuvuoll0e033vjtjjo57mufp741&lt;/string&gt;
 &lt;/plist&gt;
 </string>
 			</array>
 		</dict>
 	</array>
-	<key>NSCalendarsUsageDescription</key>
-	<string>This app uses your calendar to add Codeforces contests as events</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BrunoAceSC-Regular.ttf</string>
+		<string>Pacifico-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -59,6 +59,8 @@
 		820BF09D29F8DC6D00A62511 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BF09C29F8DC6D00A62511 /* InfoView.swift */; };
 		827DC53429FAC1A000969FE9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53329FAC1A000969FE9 /* WebView.swift */; };
 		827DC53629FAC1B800969FE9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53529FAC1B800969FE9 /* DetailView.swift */; };
+		827DC53829FB2DE100969FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */; };
+		827DC53A29FB31D800969FE9 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53929FB31D800969FE9 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		820BF09C29F8DC6D00A62511 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		827DC53329FAC1A000969FE9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		827DC53529FAC1B800969FE9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		827DC53929FB31D800969FE9 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,8 @@
 				820BF09C29F8DC6D00A62511 /* InfoView.swift */,
 				827DC53329FAC1A000969FE9 /* WebView.swift */,
 				827DC53529FAC1B800969FE9 /* DetailView.swift */,
+				827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */,
+				827DC53929FB31D800969FE9 /* AboutView.swift */,
 			);
 			path = "cp-librabry";
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				2A5E96D929E8699900691D7C /* Preview Assets.xcassets in Resources */,
 				2A5E96D629E8699900691D7C /* Assets.xcassets in Resources */,
 				820BF08329F8876100A62511 /* BrunoAceSC-Regular.ttf in Resources */,
+				827DC53829FB2DE100969FE9 /* LaunchScreen.storyboard in Resources */,
 				2A5E970229E9D56100691D7C /* GoogleService-Info.plist in Resources */,
 				820BF09B29F8D4EE00A62511 /* Pacifico-Regular.ttf in Resources */,
 			);
@@ -427,6 +434,7 @@
 				820BF08029F8819A00A62511 /* Color.swift in Sources */,
 				2A5E974929EDCC4E00691D7C /* MainView.swift in Sources */,
 				2A5E96D229E8699800691D7C /* cp_librabryApp.swift in Sources */,
+				827DC53A29FB31D800969FE9 /* AboutView.swift in Sources */,
 				2A5E974129EA03F700691D7C /* CodeforcesProfileView.swift in Sources */,
 				2A5E974529ECB34B00691D7C /* SearchSheet.swift in Sources */,
 			);
@@ -590,9 +598,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cp-librabry/Info.plist";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "This app uses your calendar to add Codeforces contests as events";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -619,9 +629,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cp-librabry/Info.plist";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "This app uses your calendar to add Codeforces contests as events";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

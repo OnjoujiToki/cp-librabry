@@ -22,7 +22,7 @@ struct AboutView: View {
                         .overlay(
                             Circle().stroke(Color(.systemGray6), lineWidth: 0.5)
                     )
-                    Text("Zhihao Zhang")
+                    Text("OnjoujiToki")
                         .font(Font.custom("Pacifico-Regular", size: 25))
                         .bold()
                         .foregroundColor(.white)

@@ -67,10 +67,15 @@ struct MainView: View {
                 .tag(5)
                 WebsiteView()
                     .tabItem {
-                        Label("Codeforce Official Website", systemImage: "at")
+                        Label("Codeforces", systemImage: "at")
                     }
                     .tag(6)
-                AboutView()
+//                AboutView()
+//                    .tabItem {
+//                        Label("About", systemImage: "person.circle")
+//                    }
+//                    .tag(7)
+                LightSwitchView()
                     .tabItem {
                         Label("About", systemImage: "person.circle")
                     }

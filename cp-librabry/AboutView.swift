@@ -63,48 +63,48 @@ struct AboutView_Previews: PreviewProvider {
     }
 }
 
-struct InfoEmailView: View {
-    let imageName: String
-    let email: String
-    var body: some View {
-        RoundedRectangle(cornerRadius: 25)
-            .fill(Color.white)
-            .frame(height: 50)
-            .overlay(HStack {
-                Image(systemName: imageName)
-                    .foregroundColor(Color(hex: "#2c3e50"))
-                Link("Email me", destination: URL(string: "mailto:\(email)")!)
-                //This line below is required if you want the app to display correctly in dark mode.
-                    //In dark mode all Text is automatically rendered as white.
-                    //So we've created a custom color in the assets folder called Infor Color and used it here.
-                    .foregroundColor(Color(hex: "#7f8c8d"))
-            }
-            .padding(.leading, -37)
-            )
-            .padding(.horizontal, 90)
-    }
-}
-
-struct InfoAboutView: View {
-    let text: String
-    let imageName: String
-    let infoUrl: String
-    var body: some View {
-        RoundedRectangle(cornerRadius: 25)
-            .fill(Color.white)
-            .frame(height: 50)
-            .overlay(HStack {
-                Image(systemName: imageName)
-                    .foregroundColor(Color(hex: "#2c3e50"))
-                Text(text)
-                    .onTapGesture {
-                        UIApplication.shared.open(URL(string: infoUrl)!)
-                    }
-                //This line below is required if you want the app to display correctly in dark mode.
-                    //In dark mode all Text is automatically rendered as white.
-                    //So we've created a custom color in the assets folder called Infor Color and used it here.
-                    .foregroundColor(Color(hex: "#7f8c8d"))
-            })
-            .padding(.horizontal, 90)
-    }
-}
+//struct InfoEmailView: View {
+//    let imageName: String
+//    let email: String
+//    var body: some View {
+//        RoundedRectangle(cornerRadius: 25)
+//            .fill(Color.white)
+//            .frame(height: 50)
+//            .overlay(HStack {
+//                Image(systemName: imageName)
+//                    .foregroundColor(Color(hex: "#2c3e50"))
+//                Link("Email me", destination: URL(string: "mailto:\(email)")!)
+//                //This line below is required if you want the app to display correctly in dark mode.
+//                    //In dark mode all Text is automatically rendered as white.
+//                    //So we've created a custom color in the assets folder called Infor Color and used it here.
+//                    .foregroundColor(Color(hex: "#7f8c8d"))
+//            }
+//            .padding(.leading, -37)
+//            )
+//            .padding(.horizontal, 90)
+//    }
+//}
+//
+//struct InfoAboutView: View {
+//    let text: String
+//    let imageName: String
+//    let infoUrl: String
+//    var body: some View {
+//        RoundedRectangle(cornerRadius: 25)
+//            .fill(Color.white)
+//            .frame(height: 50)
+//            .overlay(HStack {
+//                Image(systemName: imageName)
+//                    .foregroundColor(Color(hex: "#2c3e50"))
+//                Text(text)
+//                    .onTapGesture {
+//                        UIApplication.shared.open(URL(string: infoUrl)!)
+//                    }
+//                //This line below is required if you want the app to display correctly in dark mode.
+//                    //In dark mode all Text is automatically rendered as white.
+//                    //So we've created a custom color in the assets folder called Infor Color and used it here.
+//                    .foregroundColor(Color(hex: "#7f8c8d"))
+//            })
+//            .padding(.horizontal, 90)
+//    }
+//}

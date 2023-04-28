@@ -23,28 +23,49 @@ struct LightSwitchView: View {
     // MARK:- views
     var body: some View {
         ZStack {
-            Color(hex: "#16a085")
+            Color(hex: "#1abc9c")
             Circle()
-                .fill(Color(hex: "#1abc9c"))
+                .fill(Color(hex: "#16a085"))
                 .scaleEffect(CGSize(width: xScale, height: yScale))
                 .offset(y: yOffset)
+            
             ZStack {
                 Capsule(style: .continuous)
                     .foregroundColor(.gray)
                     .frame(width: 52, height: appHeight * 0.25 + 6)
                     .opacity(0.275)
                     .offset(x: appWidth / 2 - 48, y: 16)
+                
                 ZStack {
                     Capsule()
                         .frame(width: 3, height: self.isOff ? appHeight * 0.41 : appHeight * 0.625)
                         .foregroundColor(.white)
+                    
                     Circle()
                         .fill(Color.white)
+                        .overlay(
+                            Group {
+                                if !isOff {
+                                    Image(systemName: "chevron.up")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(Color(hex: "#7f8c8d"))
+                                } else {
+                                    Image(systemName: "chevron.down")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(Color(hex: "#7f8c8d"))
+                                }
+                            }
+                        )
                         .frame(width: 42, height: 42)
                         .offset(y: self.isOff ? appHeight * 0.225: appHeight * 0.25 + 42)
                         .onTapGesture {
                             toggleAllLights()
                         }
+                        
                 }.offset(x: appWidth / 2 - 48, y: -appHeight / 2)
                 .frame(height: 0, alignment: .top)
             }
@@ -52,6 +73,10 @@ struct LightSwitchView: View {
             
             VStack {
                 if !isOff{
+                    Text("Contributor 2")
+                        .font(Font.custom("BrunoAceSC-Regular", size: 30))
+                        .foregroundColor(.white)
+                        .padding(.bottom, 30)
                     VStack {
                         Image("profile2")
                             .resizable()
@@ -71,6 +96,10 @@ struct LightSwitchView: View {
                         InfoEmailView(imageName: "envelope.fill", email: "zhang.zhihao1@northeastern.edu")
                     }
                 }else{
+                    Text("Contributor 1")
+                        .font(Font.custom("BrunoAceSC-Regular", size: 30))
+                        .foregroundColor(.white)
+                        .padding(.bottom, 30)
                     VStack {
                         Image("profile1")
                             .resizable()
@@ -137,9 +166,9 @@ struct InfoEmailView: View {
                     //So we've created a custom color in the assets folder called Infor Color and used it here.
                     .foregroundColor(Color(hex: "#7f8c8d"))
             }
-            .padding(.leading, -37)
+//            .padding(.leading, -37)
             )
-            .padding(.horizontal, 90)
+            .padding(.horizontal, 110)
     }
 }
 
@@ -163,7 +192,7 @@ struct InfoAboutView: View {
                     //So we've created a custom color in the assets folder called Infor Color and used it here.
                     .foregroundColor(Color(hex: "#7f8c8d"))
             })
-            .padding(.horizontal, 90)
+            .padding(.horizontal, 110)
     }
 }
 

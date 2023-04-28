@@ -21,13 +21,11 @@ struct MainView: View {
                         Label("Problems", systemImage: "list.bullet")
                     }
                     .tag(0)
-                
-                ContestView()
+                NotebookPageView()
                     .tabItem {
-                        Label("Contests", systemImage: "highlighter")
+                        Label("Note", systemImage: "book.fill")
                     }
                     .tag(1)
-                
                 ToDoView()
                     .tabItem {
                         Label("To-Do", systemImage: "bookmark")
@@ -37,7 +35,12 @@ struct MainView: View {
                     .tabItem {
                         Label("For You", systemImage: "lasso.and.sparkles")
                     }
-                    .tag(3)
+                    .tag(4)
+                ContestView()
+                    .tabItem {
+                        Label("Contests", systemImage: "highlighter")
+                    }
+                    .tag(5)
                 NavigationView {
                     CodeforcesProfileView()
                         .navigationBarItems(trailing:
@@ -61,13 +64,13 @@ struct MainView: View {
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
-                .tag(4)
+                .tag(5)
                 
                 AboutView()
                     .tabItem {
                         Label("About", systemImage: "person.circle")
                     }
-                    .tag(5)
+                    .tag(6)
             }
             .accentColor(.white)
         }

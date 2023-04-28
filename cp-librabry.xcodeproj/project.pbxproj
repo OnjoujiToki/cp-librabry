@@ -61,6 +61,7 @@
 		827DC53629FAC1B800969FE9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53529FAC1B800969FE9 /* DetailView.swift */; };
 		827DC53829FB2DE100969FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */; };
 		827DC53A29FB31D800969FE9 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53929FB31D800969FE9 /* AboutView.swift */; };
+		82CA226929FBFD62008B7CA1 /* NotebookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA226829FBFD62008B7CA1 /* NotebookPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		827DC53529FAC1B800969FE9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		827DC53929FB31D800969FE9 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		82CA226829FBFD62008B7CA1 /* NotebookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				827DC53529FAC1B800969FE9 /* DetailView.swift */,
 				827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */,
 				827DC53929FB31D800969FE9 /* AboutView.swift */,
+				82CA226829FBFD62008B7CA1 /* NotebookPageView.swift */,
 			);
 			path = "cp-librabry";
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				2A5E96D229E8699800691D7C /* cp_librabryApp.swift in Sources */,
 				827DC53A29FB31D800969FE9 /* AboutView.swift in Sources */,
 				2A5E974129EA03F700691D7C /* CodeforcesProfileView.swift in Sources */,
+				82CA226929FBFD62008B7CA1 /* NotebookPageView.swift in Sources */,
 				2A5E974529ECB34B00691D7C /* SearchSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cp-librabry/Preview Content\"";
+				DEVELOPMENT_TEAM = 6K6Y6JC3UA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cp-librabry/Info.plist";
@@ -605,6 +610,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,6 +632,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cp-librabry/Preview Content\"";
+				DEVELOPMENT_TEAM = 6K6Y6JC3UA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cp-librabry/Info.plist";
@@ -636,6 +643,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

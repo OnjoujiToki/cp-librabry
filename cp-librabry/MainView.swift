@@ -23,7 +23,7 @@ struct MainView: View {
                     .tag(0)
                 NotebookPageView()
                     .tabItem {
-                        Label("Note", systemImage: "note")
+                        Label("IDE", systemImage: "note")
                     }
                     .tag(1)
                 ToDoView()

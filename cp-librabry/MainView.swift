@@ -23,7 +23,7 @@ struct MainView: View {
                     .tag(0)
                 NotebookPageView()
                     .tabItem {
-                        Label("Note", systemImage: "book.fill")
+                        Label("Note", systemImage: "note")
                     }
                     .tag(1)
                 ToDoView()
@@ -65,12 +65,16 @@ struct MainView: View {
                     Label("Profile", systemImage: "person")
                 }
                 .tag(5)
-                
+                WebsiteView()
+                    .tabItem {
+                        Label("Codeforce Official Website", systemImage: "at")
+                    }
+                    .tag(6)
                 AboutView()
                     .tabItem {
                         Label("About", systemImage: "person.circle")
                     }
-                    .tag(6)
+                    .tag(7)
             }
             .accentColor(.white)
         }

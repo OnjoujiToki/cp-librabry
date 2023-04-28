@@ -62,6 +62,7 @@
 		827DC53829FB2DE100969FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */; };
 		827DC53A29FB31D800969FE9 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827DC53929FB31D800969FE9 /* AboutView.swift */; };
 		82CA226929FBFD62008B7CA1 /* NotebookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA226829FBFD62008B7CA1 /* NotebookPageView.swift */; };
+		82CA226B29FC0AA2008B7CA1 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CA226A29FC0AA2008B7CA1 /* WebsiteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		827DC53929FB31D800969FE9 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		82CA226829FBFD62008B7CA1 /* NotebookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookPageView.swift; sourceTree = "<group>"; };
+		82CA226A29FC0AA2008B7CA1 /* WebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				827DC53729FB2DE100969FE9 /* LaunchScreen.storyboard */,
 				827DC53929FB31D800969FE9 /* AboutView.swift */,
 				82CA226829FBFD62008B7CA1 /* NotebookPageView.swift */,
+				82CA226A29FC0AA2008B7CA1 /* WebsiteView.swift */,
 			);
 			path = "cp-librabry";
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820BF09D29F8DC6D00A62511 /* InfoView.swift in Sources */,
+				82CA226B29FC0AA2008B7CA1 /* WebsiteView.swift in Sources */,
 				827DC53629FAC1B800969FE9 /* DetailView.swift in Sources */,
 				2A5E974F29EF2CE800691D7C /* getColorForDifficulty.swift in Sources */,
 				2A5E96FE29E9D2E500691D7C /* ProblemListView.swift in Sources */,

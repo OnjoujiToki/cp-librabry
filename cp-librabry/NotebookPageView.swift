@@ -35,7 +35,7 @@ struct NotebookPageView: View {
                 .padding(.horizontal)
 
             ScrollView {
-                TextEditor(text: $content)
+                TextField("Take note here...", text: $content)
                     .font(.system(size: 18))
                     .padding(.horizontal)
             }

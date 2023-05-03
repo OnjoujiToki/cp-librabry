@@ -18,65 +18,19 @@ The Competitive Programming Library iOS application offers several essential fea
 
 **Work Flow**
 
-![Graphical user interface, text, application, chat or text message  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.jpg)![Graphical user interface, text, application, chat or text message  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.jpg)
-
 1. Onboarding: Login to the existing account or create a new account
-
- 
-
-![Graphical user interface, application  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.jpg)![Graphical user interface, text, application, email  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.jpg)![Text  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.jpg)
 
 2. Problem: Display a list of problems, along with their difficulty level and tags, which allows users to filter the list based on difficulty and tags. Users can also bookmark or remove bookmarks from problems, and clicking on a problem will allow them to view the details of that problem.
 
- 
-
-![Graphical user interface, text, application, chat or text message  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.jpg)![A picture containing table  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.jpg)
-
 3. Contests: Display a list of contests. Users should be able to click on a contest to view more details about it and have the option to add it to their calendar.
-
- 
-
-![Graphical user interface, application, Teams  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.jpg)
 
 4. To-Do List: Display a list of problems bookmarked by users, with the option to delete them.
 
- 
-
- 
-
- 
-
- 
-
-![Graphical user interface, application  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.jpg)
-
 5. For You: Recommend some problems for users.
-
- 
-
-![Graphical user interface, text, application, chat or text message  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.jpg)
 
 6. Profile Page: Update the handle, display the avatar, contributions, current rating, and highest rating. To Click the button in the upper right corner to log out of the current account.
 
-
-
- 
-
- 
-
- 
-
- 
-
- 
-
-![Graphical user interface, text, application  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.jpg)![img](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.jpg)![Graphical user interface, application  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image013.jpg)![Graphical user interface, text, application  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image014.jpg)
-
 7. About: Display the app authors' information, including links to their GitHub profiles, and enable users to email them using the default email client on their phones.
-
- 
-
-![Graphical user interface, text, application  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image015.jpg)
 
 8. IDE: Integrate an online IDE within the application for a seamless coding experience.
 

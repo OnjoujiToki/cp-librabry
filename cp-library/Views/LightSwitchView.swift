@@ -1,6 +1,6 @@
 //
 //  LightSwitchView.swift
-//  cp-librabry
+//  cp-library
 //
 //  Created by Siyuan He on 4/28/23.
 //

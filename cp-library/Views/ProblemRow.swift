@@ -1,6 +1,6 @@
 //
 //  ProblemRow.swift
-//  cp-librabry
+//  cp-library
 //
 //  Created by OnjoujiToki on 4/18/23.
 //

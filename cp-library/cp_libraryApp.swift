@@ -1,6 +1,6 @@
 //
-//  cp_librabryApp.swift
-//  cp-librabry
+//  cp_libraryApp.swift
+//  cp-library
 //
 //  Created by OnjoujiToki on 4/13/23.
 //
@@ -23,8 +23,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       return GIDSignIn.sharedInstance.handle(url)
     }
 }
+
 @main
-struct cp_librabryApp: App {
+struct cp_libraryApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var userManager = UserManager()
     var body: some Scene {

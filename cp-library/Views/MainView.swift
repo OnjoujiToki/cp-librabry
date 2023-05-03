@@ -1,6 +1,6 @@
 //
-//  cp_librabryApp.swift
-//  cp-librabry
+//  cp_libraryApp.swift
+//  cp-library
 //
 //  Created by OnjoujiToki on 4/13/23.
 //

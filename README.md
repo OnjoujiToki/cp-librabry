@@ -18,8 +18,6 @@ The Competitive Programming Library iOS application offers several essential fea
 
 **Work Flow**
 
-![Graphical user interface, text, application, chat or text message  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.jpg)![Graphical user interface, text, application, chat or text message  Description automatically generated](file:////Users/siyuanhe/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.jpg)
-
 1. Onboarding: Login to the existing account or create a new account
 
 2. Problem: Display a list of problems, along with their difficulty level and tags, which allows users to filter the list based on difficulty and tags. Users can also bookmark or remove bookmarks from problems, and clicking on a problem will allow them to view the details of that problem.

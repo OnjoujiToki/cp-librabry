@@ -84,13 +84,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A5E96CE29E8699800691D7C /* cp-librabry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cp-librabry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5E96CE29E8699800691D7C /* cp-library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cp-library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5E96D129E8699800691D7C /* cp_librabryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cp_librabryApp.swift; sourceTree = "<group>"; };
 		2A5E96D529E8699900691D7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5E96D829E8699900691D7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2A5E96DE29E8699900691D7C /* cp-librabryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cp-librabryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5E96DE29E8699900691D7C /* cp-libraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cp-libraryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5E96E229E8699900691D7C /* cp_librabryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cp_librabryTests.swift; sourceTree = "<group>"; };
-		2A5E96E829E8699A00691D7C /* cp-librabryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cp-librabryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5E96E829E8699A00691D7C /* cp-libraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cp-libraryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5E96EC29E8699A00691D7C /* cp_librabryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cp_librabryUITests.swift; sourceTree = "<group>"; };
 		2A5E96EE29E8699A00691D7C /* cp_librabryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cp_librabryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A5E96FB29E9D2C000691D7C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -185,9 +185,9 @@
 		2A5E96CF29E8699800691D7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A5E96CE29E8699800691D7C /* cp-librabry.app */,
-				2A5E96DE29E8699900691D7C /* cp-librabryTests.xctest */,
-				2A5E96E829E8699A00691D7C /* cp-librabryUITests.xctest */,
+				2A5E96CE29E8699800691D7C /* cp-library.app */,
+				2A5E96DE29E8699900691D7C /* cp-libraryTests.xctest */,
+				2A5E96E829E8699A00691D7C /* cp-libraryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,9 +264,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A5E96CD29E8699800691D7C /* cp-librabry */ = {
+		2A5E96CD29E8699800691D7C /* cp-library */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A5E96F229E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-librabry" */;
+			buildConfigurationList = 2A5E96F229E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-library" */;
 			buildPhases = (
 				2A5E96CA29E8699800691D7C /* Sources */,
 				2A5E96CB29E8699800691D7C /* Frameworks */,
@@ -276,7 +276,7 @@
 			);
 			dependencies = (
 			);
-			name = "cp-librabry";
+			name = "cp-library";
 			packageProductDependencies = (
 				2A5E970429E9D62600691D7C /* FirebaseAnalytics */,
 				2A5E970629E9D62600691D7C /* FirebaseAppCheck */,
@@ -306,12 +306,12 @@
 				2A5E973B29E9DF5600691D7C /* GoogleSignInSwift */,
 			);
 			productName = "cp-librabry";
-			productReference = 2A5E96CE29E8699800691D7C /* cp-librabry.app */;
+			productReference = 2A5E96CE29E8699800691D7C /* cp-library.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2A5E96DD29E8699900691D7C /* cp-librabryTests */ = {
+		2A5E96DD29E8699900691D7C /* cp-libraryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A5E96F529E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-librabryTests" */;
+			buildConfigurationList = 2A5E96F529E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-libraryTests" */;
 			buildPhases = (
 				2A5E96DA29E8699900691D7C /* Sources */,
 				2A5E96DB29E8699900691D7C /* Frameworks */,
@@ -322,14 +322,14 @@
 			dependencies = (
 				2A5E96E029E8699900691D7C /* PBXTargetDependency */,
 			);
-			name = "cp-librabryTests";
+			name = "cp-libraryTests";
 			productName = "cp-librabryTests";
-			productReference = 2A5E96DE29E8699900691D7C /* cp-librabryTests.xctest */;
+			productReference = 2A5E96DE29E8699900691D7C /* cp-libraryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2A5E96E729E8699A00691D7C /* cp-librabryUITests */ = {
+		2A5E96E729E8699A00691D7C /* cp-libraryUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A5E96F829E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-librabryUITests" */;
+			buildConfigurationList = 2A5E96F829E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-libraryUITests" */;
 			buildPhases = (
 				2A5E96E429E8699A00691D7C /* Sources */,
 				2A5E96E529E8699A00691D7C /* Frameworks */,
@@ -340,9 +340,9 @@
 			dependencies = (
 				2A5E96EA29E8699A00691D7C /* PBXTargetDependency */,
 			);
-			name = "cp-librabryUITests";
+			name = "cp-libraryUITests";
 			productName = "cp-librabryUITests";
-			productReference = 2A5E96E829E8699A00691D7C /* cp-librabryUITests.xctest */;
+			productReference = 2A5E96E829E8699A00691D7C /* cp-libraryUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -368,7 +368,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A5E96C929E8699800691D7C /* Build configuration list for PBXProject "cp-librabry" */;
+			buildConfigurationList = 2A5E96C929E8699800691D7C /* Build configuration list for PBXProject "cp-library" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -385,9 +385,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A5E96CD29E8699800691D7C /* cp-librabry */,
-				2A5E96DD29E8699900691D7C /* cp-librabryTests */,
-				2A5E96E729E8699A00691D7C /* cp-librabryUITests */,
+				2A5E96CD29E8699800691D7C /* cp-library */,
+				2A5E96DD29E8699900691D7C /* cp-libraryTests */,
+				2A5E96E729E8699A00691D7C /* cp-libraryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -474,12 +474,12 @@
 /* Begin PBXTargetDependency section */
 		2A5E96E029E8699900691D7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A5E96CD29E8699800691D7C /* cp-librabry */;
+			target = 2A5E96CD29E8699800691D7C /* cp-library */;
 			targetProxy = 2A5E96DF29E8699900691D7C /* PBXContainerItemProxy */;
 		};
 		2A5E96EA29E8699A00691D7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2A5E96CD29E8699800691D7C /* cp-librabry */;
+			target = 2A5E96CD29E8699800691D7C /* cp-library */;
 			targetProxy = 2A5E96E929E8699A00691D7C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -680,7 +680,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cp-librabry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cp-librabry";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cp-library.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cp-library";
 			};
 			name = Debug;
 		};
@@ -699,7 +699,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cp-librabry.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cp-librabry";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cp-library.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cp-library";
 			};
 			name = Release;
 		};
@@ -740,7 +740,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A5E96C929E8699800691D7C /* Build configuration list for PBXProject "cp-librabry" */ = {
+		2A5E96C929E8699800691D7C /* Build configuration list for PBXProject "cp-library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A5E96F029E8699A00691D7C /* Debug */,
@@ -749,7 +749,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A5E96F229E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-librabry" */ = {
+		2A5E96F229E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A5E96F329E8699A00691D7C /* Debug */,
@@ -758,7 +758,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A5E96F529E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-librabryTests" */ = {
+		2A5E96F529E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-libraryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A5E96F629E8699A00691D7C /* Debug */,
@@ -767,7 +767,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A5E96F829E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-librabryUITests" */ = {
+		2A5E96F829E8699A00691D7C /* Build configuration list for PBXNativeTarget "cp-libraryUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A5E96F929E8699A00691D7C /* Debug */,

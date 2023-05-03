@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/siyuanhe/Desktop/cp-librabry/cp-library.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
